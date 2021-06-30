@@ -1,7 +1,8 @@
 name: flutter_plugin_calendar
-description: A new Flutter package project.
+description: A Flutter package for calendar.
 version: 0.0.1
-homepage:
+homepage: https://github.com/shinenyok/flutter_plugin_calendar
+repository: https://github.com/shinenyok/flutter_plugin_calendar
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
