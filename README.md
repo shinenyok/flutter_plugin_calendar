@@ -1,12 +1,12 @@
 # flutter_plugin_calendar
 
-目前适用于唯寻网校APP的Dart日历插件，目前功能添加课程标示、根据DateTime获取周几.
+日历插件，目前功能添加课程标示、根据DateTime获取周几.
 
 ## Getting Started
 
 在工程 pubspec.yaml 中加入 dependencies
 ```
-  flutter_gt_plugin: 0.0.1
+  flutter_gt_plugin: 0.0.2
 ```
 ## 使用
 ```dart

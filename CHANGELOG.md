@@ -1,3 +1,7 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.1] - initial.
 
-* TODO: Describe initial release.
+* initial.
+
+## [0.0.2] - 完善文档.
+
+* 更新readme等.
