@@ -30,6 +30,7 @@ enum ControlAlign {
   ///居下
   bottom
 }
+
 ///日历widget
 class CalendarView extends StatefulWidget {
   ///默认选中日期
@@ -169,52 +170,53 @@ class _CalendarViewState extends State<CalendarView> {
           DateTime(selectedYear, selectedMonth, selectedDay)),
       keepPage: true,
     );
-    return Padding(
+    return SingleChildScrollView(
       padding: widget.insets ?? EdgeInsets.only(left: 8, right: 8),
-      child: Column(
-        children: [
-          Material(
-            type: MaterialType.transparency,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                _topWidget(),
-                _weekItems(),
-                isExpand ? _getMonthView() : _getWeekView(),
-                Container(
-                  child: Row(
-                    children: [
-                      (isExpand && widget.align == ControlAlign.bottom)
-                          ? _getPreviousButtonWidget()
-                          : SizedBox.shrink(),
-                      Spacer(),
-                      widget.showExpandMore
-                          ? IconButton(
-                              icon: Icon(
-                                isExpand
-                                    ? Icons.expand_less_outlined
-                                    : Icons.expand_more_outlined,
-                                size: 36,
-                                color: Color(0xFFC2C6CC),
-                              ),
-                              onPressed: () {
-                                setState(() {
-                                  isExpand = !isExpand;
-                                });
-                              },
-                            )
-                          : SizedBox.shrink(),
-                      Spacer(),
-                      (isExpand && widget.align == ControlAlign.bottom)
-                          ? _getNextButtonWidget()
-                          : SizedBox.shrink(),
-                    ],
-                  ),
+      physics: NeverScrollableScrollPhysics(),
+      child: Material(
+        type: MaterialType.transparency,
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              _topWidget(),
+              _weekItems(),
+              isExpand ? _getMonthView() : _getWeekView(),
+              Container(
+                child: Row(
+                  children: [
+                    (isExpand && widget.align == ControlAlign.bottom)
+                        ? _getPreviousButtonWidget()
+                        : SizedBox.shrink(),
+                    Spacer(),
+                    widget.showExpandMore
+                        ? IconButton(
+                            icon: Icon(
+                              isExpand
+                                  ? Icons.expand_less_outlined
+                                  : Icons.expand_more_outlined,
+                              size: 36,
+                              color: Color(0xFFC2C6CC),
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                isExpand = !isExpand;
+                              });
+                            },
+                          )
+                        : SizedBox.shrink(),
+                    Spacer(),
+                    (isExpand && widget.align == ControlAlign.bottom)
+                        ? _getNextButtonWidget()
+                        : SizedBox(
+                            height: 16,
+                          ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

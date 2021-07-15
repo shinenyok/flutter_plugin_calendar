@@ -64,38 +64,33 @@ class FlutterPluginCalendar {
   }) =>
       showModalBottomSheet(
         context: context,
+        isScrollControlled: true,
         shape: RoundedRectangleBorder(
           //圆角
           borderRadius:
               BorderRadius.vertical(top: Radius.circular(radius ?? 30)),
         ),
-        builder: (context) => Container(
-          constraints: BoxConstraints(
-            minHeight: 90, //设置最小高度（必要）
-            maxHeight: MediaQuery.of(context).size.width + 15, //设置最大高度（必要）
-          ),
-          child: CalendarView(
-            dateMap: dateMap,
-            selectedColor: selectedColor,
-            subTitleDisableColor: subTitleDisableColor,
-            subTitleEnableColor: subTitleEnableColor,
-            subTitleFutureColor: subTitleFutureColor,
-            previousIconData: previousIconData,
-            nextIconData: previousIconData,
-            titleColor: titleColor,
-            startDateTime: DateTime(DateTime.now().year - 2, 1, 1),
-            endDateTime: DateTime(DateTime.now().year + 2, 1, 1),
-            showExpandMore: false,
-            align: align,
-            format: format,
-            previousTitle: previousTitle,
-            nextTitle: nextTitle,
-            iconColor: iconColor,
-            currentDateTime: currentDateTime,
-            onSelectedDateTime: (isMonthChange, dateTime) {
-              onSelectedDateTime(isMonthChange, dateTime);
-            },
-          ),
+        builder: (context) => CalendarView(
+          dateMap: dateMap,
+          selectedColor: selectedColor,
+          subTitleDisableColor: subTitleDisableColor,
+          subTitleEnableColor: subTitleEnableColor,
+          subTitleFutureColor: subTitleFutureColor,
+          previousIconData: previousIconData,
+          nextIconData: previousIconData,
+          titleColor: titleColor,
+          startDateTime: DateTime(DateTime.now().year - 2, 1, 1),
+          endDateTime: DateTime(DateTime.now().year + 2, 1, 1),
+          showExpandMore: false,
+          align: align,
+          format: format,
+          previousTitle: previousTitle,
+          nextTitle: nextTitle,
+          iconColor: iconColor,
+          currentDateTime: currentDateTime,
+          onSelectedDateTime: (isMonthChange, dateTime) {
+            onSelectedDateTime(isMonthChange, dateTime);
+          },
         ),
       );
 }

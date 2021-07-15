@@ -1,21 +1,18 @@
 # flutter_plugin_calendar
 
-日历插件，目前功能添加课程标示、根据DateTime获取周几.
-
+flutter自定义日历组件，视图提供仅月/周显示、月/周可切换视图(可默认月/周显示).以及可默认选中日期，支持图标、颜色等自定义等
 ## Getting Started
 
-在工程 pubspec.yaml 中加入 dependencies
+* 在工程 pubspec.yaml 中加入 dependencies
 ```
-  flutter_gt_plugin: 0.0.2
+  flutter_gt_plugin: 0.0.3
 ```
 ## 使用
 ```dart
 import 'package:flutter_plugin_calendar/flutter_plugin_calendar.dart';
 ```
-#### showCarlendarView
-展示日历组件
-
-showModalBottomSheet展开
+#### 展示日历组件
+* showModalBottomSheet展开
 ```
 Map<String, dynamic> dateMap = {
     '2021-07-14': '课',
@@ -59,7 +56,7 @@ Map<String, dynamic> dateMap = {
               );
 
 ```
-使用组件添加到widget树
+* 使用组件添加到widget树
 ```
             ///仅显示周
             CalendarView(
@@ -115,3 +112,5 @@ Map<String, dynamic> dateMap = {
               },
             ),
 ```
+## 预览
+![image](https://shineyoki.oss-cn-beijing.aliyuncs.com/calendar.gif)

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+///日期计算工具
 class CalendarTimeUtil {
   static List get daysInMonth =>
       [31, -1, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
@@ -75,27 +75,20 @@ class CalendarTimeUtil {
     switch (weekDay) {
       case 0:
         return '日';
-        break;
       case 1:
         return '一';
-        break;
       case 2:
         return '二';
-        break;
       case 3:
         return '三';
       case 4:
         return '四';
-        break;
       case 5:
         return '五';
-        break;
       case 6:
         return '六';
-        break;
       default:
         return '日';
-        break;
     }
   }
 

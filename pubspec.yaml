@@ -1,6 +1,6 @@
 name: flutter_plugin_calendar
-description: flutter自定义日历组件，视图提供仅月/周显示、月/周可切换视图(可默认月/周显示).以及可默认选中日期，支持图标、颜色等自定义等
-version: 0.0.2
+description:  Flutter Custom Calendar component, highly customizable view, only month / week display, month / week switchable view (default month / week display).
+version: 0.0.3
 homepage: https://github.com/shinenyok/flutter_plugin_calendar
 repository: https://github.com/shinenyok/flutter_plugin_calendar
 
